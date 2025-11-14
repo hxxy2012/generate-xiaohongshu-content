@@ -7,10 +7,11 @@
 - [ ] **操作系统**：Ubuntu 20.04+ / CentOS 7+ / Debian 10+
 - [ ] **PHP版本**：>= 8.0
 - [ ] **MySQL版本**：>= 8.0
-- [ ] **Redis版本**：>= 6.0
 - [ ] **内存**：至少 2GB RAM
 - [ ] **磁盘空间**：至少 10GB
 - [ ] **网络**：能访问Google API服务
+
+**注意**：本系统使用文件缓存，无需Redis，简化部署！
 
 ### PHP扩展要求
 
@@ -18,15 +19,16 @@
 # 检查已安装的扩展
 php -m
 
-# 必需扩展列表
+# 必需扩展列表（无需Redis扩展）
 ✓ pdo_mysql
-✓ redis
 ✓ gd
 ✓ mbstring
 ✓ json
 ✓ openssl
 ✓ curl
 ✓ zip
+✓ xml
+✓ bcmath
 ```
 
 ## 🚀 生产环境部署（Ubuntu 20.04）
@@ -55,8 +57,8 @@ sudo systemctl enable nginx
 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt update
 
-# 安装PHP 8.1及必需扩展
-sudo apt install php8.1-fpm php8.1-cli php8.1-mysql php8.1-redis \
+# 安装PHP 8.1及必需扩展（无需Redis）
+sudo apt install -y php8.1-fpm php8.1-cli php8.1-mysql \
                  php8.1-gd php8.1-mbstring php8.1-xml php8.1-curl \
                  php8.1-zip php8.1-bcmath -y
 

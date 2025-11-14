@@ -1,6 +1,6 @@
 # RedBookAI - 小红书AI创作助手
 
-> 基于ThinkPHP 8.x + MySQL + Gemini API的智能小红书内容生成系统
+> 基于ThinkPHP 8.x + MySQL + Gemini API的智能小红书内容生成系统（轻量级部署，无需Redis）
 
 ## 🎯 项目简介
 
@@ -22,11 +22,13 @@ RedBookAI是一个完整的小红书内容智能创作平台，用户输入主�
 - PHP 8.0+
 - ThinkPHP 8.x
 - MySQL 8.0+
-- Redis 6.0+
 
 ### 核心服务
 - Google Gemini API（AI文案生成）
 - PHP GD Library（图片处理）
+
+### 缓存方案
+- 文件缓存（无需Redis，轻量级部署）
 
 ### 前端
 - HTML5 + CSS3 + JavaScript
@@ -39,8 +41,7 @@ RedBookAI是一个完整的小红书内容智能创作平台，用户输入主�
 ```bash
 PHP >= 8.0
 MySQL >= 8.0
-Redis >= 6.0
-PHP扩展：pdo_mysql, redis, gd, mbstring, json, openssl
+PHP扩展：pdo_mysql, gd, mbstring, json, openssl, curl, zip
 ```
 
 ### 安装步骤
@@ -78,10 +79,8 @@ PASSWORD = your_password
 HOSTPORT = 3306
 PREFIX = rb_
 
-[REDIS]
-HOST = 127.0.0.1
-PORT = 6379
-PASSWORD =
+[CACHE]
+DRIVER = file
 
 [GEMINI]
 # 在 https://makersuite.google.com/app/apikey 获取API Key
