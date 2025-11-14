@@ -1,0 +1,63 @@
+{
+  "template_id": 1,
+  "template_name": "粉色少女心",
+  "template_code": "pink_girl",
+  "category": "basic",
+  "width": 1080,
+  "height": 1440,
+  "background": {
+    "type": "gradient",
+    "colors": ["#FFB6C1", "#FFC0CB", "#FFB6D9"],
+    "direction": "vertical"
+  },
+  "elements": [
+    {
+      "type": "text",
+      "field": "title",
+      "position": {"x": 60, "y": 120},
+      "width": 960,
+      "height": 200,
+      "font": "default",
+      "font_size": 52,
+      "color": "#FFFFFF",
+      "align": "left",
+      "line_height": 1.5,
+      "max_lines": 2,
+      "bold": true,
+      "shadow": {
+        "x": 2,
+        "y": 2,
+        "blur": 5,
+        "color": "#00000033"
+      }
+    },
+    {
+      "type": "text",
+      "field": "content",
+      "position": {"x": 80, "y": 380},
+      "width": 920,
+      "height": 900,
+      "font": "default",
+      "font_size": 36,
+      "color": "#333333",
+      "align": "left",
+      "line_height": 1.8,
+      "max_lines": 20,
+      "bold": false
+    },
+    {
+      "type": "text",
+      "field": "tags",
+      "position": {"x": 80, "y": 1320},
+      "width": 920,
+      "height": 80,
+      "font": "default",
+      "font_size": 30,
+      "color": "#FF69B4",
+      "align": "left",
+      "line_height": 1.5,
+      "max_lines": 2,
+      "bold": false
+    }
+  ]
+}
